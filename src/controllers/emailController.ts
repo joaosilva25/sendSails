@@ -31,7 +31,7 @@ export const send=async(req:Request, res:Response)=> {
             console.log('Enviado')
         }
         catch(err) {
-            res.json({status:'Erro no envio do Email'})
+            res.json({status:'Erro no envio do Email', err})
         }
     }
 }
