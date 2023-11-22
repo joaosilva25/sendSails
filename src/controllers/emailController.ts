@@ -5,17 +5,20 @@ import dotenv from 'dotenv';
 dotenv.config()
 
 export const send=async(req:Request, res:Response)=> {
+
+    
+    let {userAuth,passAuth,from,to,subject,text}=req.body
+
     var transport = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 587,
         secure: false,
         auth: {
-            user: process.env.GMAIL_EMAIL,
-            pass: process.env.GMAIL_PASSWORD
+            user: userAuth,
+            pass: passAuth
         }
     });
 
-    let {from,to,subject,text}=req.body
 
     if(from && to && subject && text) {
         let message = {
