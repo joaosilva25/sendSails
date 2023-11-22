@@ -7,7 +7,7 @@ dotenv.config()
 export const send=async(req:Request, res:Response)=> {
 
 
-    let {userAuth,passAuth,from,to,subject,html}=req.body
+    let {userAuth,passAuth,to,subject,html}=req.body
 
     var transport = nodemailer.createTransport({
         host: "smtp.gmail.com",
@@ -21,7 +21,6 @@ export const send=async(req:Request, res:Response)=> {
 
 
         let message = {
-            from,
             to,
             subject,
             html
