@@ -14,7 +14,7 @@ export const send=async(req:Request, res:Response)=> {
         port: 587,
         secure: false,
         auth: {
-            user: process.env.GMAIL_USER as string,
+            user: process.env.GMAIL_EMAIL as string,
             pass: process.env.GMAIL_PASSWORD as string
         }
     });
