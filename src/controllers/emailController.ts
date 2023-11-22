@@ -19,11 +19,6 @@ export const send=async(req:Request, res:Response)=> {
         }
     });
 
-    if(!from) {
-        from=process.env.GMAIL_USER;
-    }
-
-    if(to && subject && html) {
         let message = {
             from,
             to,
@@ -39,7 +34,6 @@ export const send=async(req:Request, res:Response)=> {
         catch(err) {
             res.json({status:'Erro no envio do Email', err})
         }
-    }
 }
 
 
