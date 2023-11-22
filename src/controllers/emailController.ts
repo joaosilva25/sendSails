@@ -6,7 +6,7 @@ dotenv.config()
 
 export const send=async(req:Request, res:Response)=> {
 
-    
+
     let {userAuth,passAuth,from,to,subject,html}=req.body
 
     var transport = nodemailer.createTransport({
@@ -18,6 +18,7 @@ export const send=async(req:Request, res:Response)=> {
             pass: passAuth
         }
     });
+
 
         let message = {
             from,
